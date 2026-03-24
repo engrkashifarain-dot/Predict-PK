@@ -34,7 +34,8 @@ if st.button("Get Oracle's Blessing"):
                 response = model.generate_content(prompt)
                 st.chat_message("assistant").write(response.text)
                 st.balloons()
-            except:
+            except Exception as e:
+                st.error(f"The Oracle is stuck! Error: {e}")
                 st.write("The Oracle is stuck in Lahore traffic. Try again!")
 
 st.divider()
